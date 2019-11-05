@@ -1,0 +1,16 @@
+title = "Alice in Wonderland"
+title.split()
+['Alice', 'in', 'Wonderland']
+filename = 'alice.txt'
+
+try:
+    with open(filename) as f_obj:
+        contents = f_obj.read()
+except FileNotFoundError:
+    msg = "Sorry, the file {} does not exist.".format(filename)
+    print(msg)
+else:
+    # count file included how many words
+    words = contents.split()
+    num_words = len(words)
+    print("The file {0} has about {1} words".format(filename, str(num_words)))
